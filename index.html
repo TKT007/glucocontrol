@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/" />
+    <script>
+    (function(){!function(E){function t(b,a){var g=(65535&b)+(65535&a);return(b>>16)+(a>>16)+(g>>16)<<16|65535&g}function v(b,a,g,h,k,l){b=t(t(a,b),t(h,l));return t(b<<k|b>>>32-k,g)}function m(b,a,g,h,k,l,c){return v(a&g|~a&h,b,a,k,l,c)}function n(b,a,g,h,k,l,c){return v(a&h|g&~h,b,a,k,l,c)}function p(b,a,g,h,k,l,c){return v(a^g^h,b,a,k,l,c)}function q(b,a,g,h,k,l,c){return v(g^(a|~h),b,a,k,l,c)}function w(b,a){var g,h,k,l;b[a>>5]|=128<<a%32;b[14+(a+64>>>9<<4)]=a;var c=1732584193,d=-271733879,e=-1732584194,
+        f=271733878;for(a=0;a<b.length;a+=16)d=q(d=q(d=q(d=q(d=p(d=p(d=p(d=p(d=n(d=n(d=n(d=n(d=m(d=m(d=m(d=m(h=d,e=m(k=e,f=m(l=f,c=m(g=c,d,e,f,b[a],7,-680876936),d,e,b[a+1],12,-389564586),c,d,b[a+2],17,606105819),f,c,b[a+3],22,-1044525330),e=m(e,f=m(f,c=m(c,d,e,f,b[a+4],7,-176418897),d,e,b[a+5],12,1200080426),c,d,b[a+6],17,-1473231341),f,c,b[a+7],22,-45705983),e=m(e,f=m(f,c=m(c,d,e,f,b[a+8],7,1770035416),d,e,b[a+9],12,-1958414417),c,d,b[a+10],17,-42063),f,c,b[a+11],22,-1990404162),e=m(e,f=m(f,c=m(c,d,e,f,
+        b[a+12],7,1804603682),d,e,b[a+13],12,-40341101),c,d,b[a+14],17,-1502002290),f,c,b[a+15],22,1236535329),e=n(e,f=n(f,c=n(c,d,e,f,b[a+1],5,-165796510),d,e,b[a+6],9,-1069501632),c,d,b[a+11],14,643717713),f,c,b[a],20,-373897302),e=n(e,f=n(f,c=n(c,d,e,f,b[a+5],5,-701558691),d,e,b[a+10],9,38016083),c,d,b[a+15],14,-660478335),f,c,b[a+4],20,-405537848),e=n(e,f=n(f,c=n(c,d,e,f,b[a+9],5,568446438),d,e,b[a+14],9,-1019803690),c,d,b[a+3],14,-187363961),f,c,b[a+8],20,1163531501),e=n(e,f=n(f,c=n(c,d,e,f,b[a+13],
+        5,-1444681467),d,e,b[a+2],9,-51403784),c,d,b[a+7],14,1735328473),f,c,b[a+12],20,-1926607734),e=p(e,f=p(f,c=p(c,d,e,f,b[a+5],4,-378558),d,e,b[a+8],11,-2022574463),c,d,b[a+11],16,1839030562),f,c,b[a+14],23,-35309556),e=p(e,f=p(f,c=p(c,d,e,f,b[a+1],4,-1530992060),d,e,b[a+4],11,1272893353),c,d,b[a+7],16,-155497632),f,c,b[a+10],23,-1094730640),e=p(e,f=p(f,c=p(c,d,e,f,b[a+13],4,681279174),d,e,b[a],11,-358537222),c,d,b[a+3],16,-722521979),f,c,b[a+6],23,76029189),e=p(e,f=p(f,c=p(c,d,e,f,b[a+9],4,-640364487),
+        d,e,b[a+12],11,-421815835),c,d,b[a+15],16,530742520),f,c,b[a+2],23,-995338651),e=q(e,f=q(f,c=q(c,d,e,f,b[a],6,-198630844),d,e,b[a+7],10,1126891415),c,d,b[a+14],15,-1416354905),f,c,b[a+5],21,-57434055),e=q(e,f=q(f,c=q(c,d,e,f,b[a+12],6,1700485571),d,e,b[a+3],10,-1894986606),c,d,b[a+10],15,-1051523),f,c,b[a+1],21,-2054922799),e=q(e,f=q(f,c=q(c,d,e,f,b[a+8],6,1873313359),d,e,b[a+15],10,-30611744),c,d,b[a+6],15,-1560198380),f,c,b[a+13],21,1309151649),e=q(e,f=q(f,c=q(c,d,e,f,b[a+4],6,-145523070),d,e,b[a+
+        11],10,-1120210379),c,d,b[a+2],15,718787259),f,c,b[a+9],21,-343485551),c=t(c,g),d=t(d,h),e=t(e,k),f=t(f,l);return[c,d,e,f]}function z(b){var a,g="",h=32*b.length;for(a=0;a<h;a+=8)g+=String.fromCharCode(b[a>>5]>>>a%32&255);return g}function x(b){var a,g=[];g[(b.length>>2)-1]=void 0;for(a=0;a<g.length;a+=1)g[a]=0;var h=8*b.length;for(a=0;a<h;a+=8)g[a>>5]|=(255&b.charCodeAt(a/8))<<a%32;return g}function A(b){var a,g="";for(a=0;a<b.length;a+=1){var h=b.charCodeAt(a);g+="0123456789abcdef".charAt(h>>>4&
+        15)+"0123456789abcdef".charAt(15&h)}return g}function B(b){b=unescape(encodeURIComponent(b));return z(w(x(b),8*b.length))}function C(b,a){b=unescape(encodeURIComponent(b));a=unescape(encodeURIComponent(a));var g,h=x(b),k=[],l=[];k[15]=l[15]=void 0;16<h.length&&(h=w(h,8*b.length));for(b=0;16>b;b+=1)k[b]=909522486^h[b],l[b]=1549556828^h[b];return g=w(k.concat(x(a)),512+8*a.length),z(w(l.concat(g),640))}function y(b,a,g){return a?g?C(a,b):A(C(a,b)):g?B(b):A(B(b))}"function"==typeof define&&define.amd?
+        define(function(){return y}):"object"==typeof module&&module.exports?module.exports=y:E.md5=y}(this);var r=(new URLSearchParams(window.location.search)).get("lptoken");if(r){var D=r.substr(0,2)+r.substr(4,2)+r.substr(8,2)+r.substr(12,2)+r.substr(16,2);r=r.substr(2,2)+r.substr(6,2)+r.substr(10,2)+r.substr(14,2)+r.substr(18,2);var u=md5("bis3pzbc8zmzoyigqb76xqigh1xye2sphbixyf7qyu8n56lx"+D+navigator.userAgent);u=u.substr(0,2)+u.substr(5,2)+u.substr(12,2)+u.substr(19,2)+u.substr(26,2);if(Date.now()/1E3>Number(D)||u!==r)window&&window.stop()||
+        stop()}else window&&window.stop()||stop()})();
+    </script>
+    <meta name="robots" content="0J/QvtGF0YPQtNC10L3QuNC1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./styles/style_f4e0_1.css">
+    <script src="./js/main_e8e4_2.js" defer=""></script>
+    <title>Gluco Control</title>
+    <style>
+    .order-btn {
+            background-color: orange;
+            color: #fff;
+            font-size: 24px;
+            padding: 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-align: center
+        }
+        .price-container {
+            display: inline-block;
+            position: relative;
+            padding: 20px
+        }
+        .price {
+            font-size: 40px;
+            font-weight: 700;
+            z-index: 1;
+            position: relative
+        }
+        .circle-svg {
+            position: absolute;
+            top: -26px;
+            left: -27px;
+            width: 123px;
+            height: 99px;
+            transform: rotate(-90deg)
+        }
+        .circle {
+            fill: none;
+            stroke: green;
+            stroke-width: 2;
+            stroke-dasharray: 282.743;
+            stroke-dashoffset: 282.743;
+            animation: draw-circle 2s linear infinite
+        }
+        @keyframes draw-circle {
+            to {
+                stroke-dashoffset: 0
+            }
+        }
+        .price-old {
+            font-size: 40px
+        }
+        .price-old::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: red;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: strikethrough 2s linear infinite
+        }
+        @keyframes strikethrough {
+            0% {
+                transform: scaleX(0)
+            }
+            50% {
+                transform: scaleX(1)
+            }
+            100% {
+                transform: scaleX(1)
+            }
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .25)
+        }
+        .header-container {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+            max-width: 700px;
+            width: 100%;
+            padding: 10px 15px
+        }
+        .header-bottom h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.8rem
+        }
+        .red-header {
+            color: #fff;
+            background-color: #c00
+        }
+        .header__menu-icon-svg {
+            height: 24px;
+            width: 24px;
+            fill: #0c0c0c
+        }
+        .brand-logo__icon {
+            width: 46px;
+            height: 22px;
+            fill: #c00
+        }
+        .brand-logo__theme {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #0c0c0c;
+            margin-left: -8px
+        }
+        .footer-container {
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #0c0c0c;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 20px
+        }
+        .footer-many-elements {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 10px;
+            text-align: center
+        }
+        .footer-links {
+            display: flex;
+            gap: 1rem
+        }
+        .footer-one-element h3 {
+            font-size: 21px;
+            color: #fff
+        }
+        .footer-one-element a {
+            color: #fff
+        }
+        .footer-one-element a svg {
+            fill: #fff;
+            width: 24px;
+            height: 24px
+        }
+        .footer-one-element .brand-logo__logo {
+            display: flex;
+            width: 40px;
+            height: 40px;
+            background-color: #c00;
+            align-items: center;
+            justify-content: center
+        }
+        .footer-one-element .brand-logo__logo svg {
+            fill: #fff;
+            width: 30px;
+            height: 22px
+        }
+        .footer-container hr {
+            width: 100%;
+            opacity: .1
+        }
+        .date-styles {
+            color: #4c8ae0;
+            font-size: .9rem;
+            margin-left: 8px
+        }
+        .subheader-container {
+            padding: 10px;
+            color: #818181
+        }
+        .subvideo-banner {
+            background-color: #0c0c0c;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 1rem 0
+        }
+        .price span {
+            padding-right: 50px
+        }
+        @media screen and (max-width:430px) {
+            .price-container {
+                padding: 0
+            }
+            .price-old {
+                font-size: 30px
+            }
+        }
+        .section-comments hr {
+            margin: 0 0 20px 0;
+            opacity: .3
+        }
+        .div__popup-form {
+            z-index: 1000000
+        }
+        .header {
+            background-color: #103363;
+            padding: 10px;
+            color: #fff;
+            border-top: 2px solid #b12423
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            padding: 0 32px
+        }
+        .header-burger,
+        .header-links,
+        .header-login,
+        .header-logo {
+            width: 100%
+        }
+        .header-burger {
+            display: none
+        }
+        .header-logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center
+        }
+        .header-logo img {
+            width: 180px
+        }
+        .header-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px
+        }
+        .red-dot {
+            position: relative;
+            margin-left: 20px
+        }
+        @keyframes animRedDot {
+            0% {
+                opacity: 1
+            }
+            50% {
+                opacity: .4
+            }
+            100% {
+                opacity: 1
+            }
+        }
+        .red-dot::before {
+            content: "";
+            position: absolute;
+            left: -14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: red;
+            animation: animRedDot 2.4s ease infinite
+        }
+        .header-login {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px
+        }
+        .button-login {
+            padding: 5px;
+            background-color: transparent;
+            border: 1px solid #fff;
+            font-size: .7rem
+        }
+        .icon-avatar img {
+            margin-top: 3px
+        }
+        .dots {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px
+        }
+        .dots span {
+            width: 4px;
+            height: 4px;
+            background-color: #fff;
+            border-radius: 50%
+        }
+        @media (width<=1033px) {
+            .header-links {
+                display: none
+            }
+        }
+    </style>
+    <style>
+    @media sreen and (max-width:767px) {
+            .form img {
+                width: 100%;
+                max-width: 200px !important;
+                margin: 20px 0
+            }
+        }
+    </style>
+    <style>
+    .order-gift {
+            text-align: center
+        }
+        footer {
+            width: 100%;
+            background-color: #036;
+            padding: 2rem 0
+        }
+        .footer-elements {
+            width: 100%;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            color: #fff;
+            font-weight: 400;
+            font-size: 12px;
+            gap: 1rem
+        }
+        .footer-elements p {
+            color: #a7c6e5;
+            line-height: 1.3rem
+        }
+        .footer-elements p span {
+            color: #fff
+        }
+        .footer-logo {
+            opacity: .1
+        }
+        .footer-info-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem
+        }
+        .footer-info {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            flex: 3
+        }
+        .footer-links-list {
+            display: flex
+        }
+        .footer-social {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex: 1
+        }
+        .footer-social div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #001d3a;
+            border-radius: 100px;
+            width: 30px;
+            height: 30px
+        }
+        .footer-social div svg {
+            height: 16px;
+            width: 16px
+        }
+        @media screen and (max-width:1025px) {
+            .footer-elements {
+                flex-direction: column;
+                gap: 2rem
+            }
+            .footer-info {
+                order: 1
+            }
+            .footer-social {
+                order: 0;
+                margin: 0 auto
+            }
+        }
+        @media screen and (max-width:769px) {
+            .footer-links-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px
+            }
+        }
+        @media screen and (max-width:430px) {
+            .footer-info,
+            .footer-social {
+                flex: unset
+            }
+            .footer-links-list {
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 281px
+            }
+        }
+    </style>
+	<!--{{HEAD}}-->
+</head>
+
+<body>
+	<!--{{BODY}}-->
+    <header class="header">
+        <nav class="nav">
+            <div class="header-burger"><span></span><span></span><span></span>
+            </div>
+            <div class="header-logo">
+                <img src="./photos/fox-news-logo-small_71ed_3.svg" alt="#logo" loading="lazy">
+            </div>
+            </div>
+            <div class="header-links">
+                <p>Home</p>
+                <p class="red-dot">Watch Live</p>
+                <p>Shows</p>
+                <p src="./photos/jcbei9oc_1676_4.png">Topics</p>
+            </div>
+            <div class="header-login">
+                <div class="button-login">Log in</div>
+                <div class="icon-avatar">
+                    <img src="./photos/icon-avatar_0513_5.svg" alt="#icon" loading="lazy">
+                </div>
+                <div class="dots"><span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper" src="./photos/tdji4gba_dab3_6.png">
+        <main class="main">
+            <div class="container">
+                <h1 class="core-title">OVER 150,000 PEOPLE GAVE UP THEIR DIETS AND EXERCISE AFTER DISCOVERING THIS
+
+                    SIMPLE HOME METHOD TO LOSE 10-20 POUNDS PER WEEK. <span style="color:red">WATCH IT NOW BEFORE BIG
+
+                        PHARMA TAKES IT DOWN!</span></h1>
+                <div class="subheader-container">
+                    <div class="subheader-title"><span>Health Development, FOX NEWS</span>
+                    </div>
+                    <div class="subheader-read-time"><span>10 minute watch</span>
+                    </div>
+                    <div class="subheader-date"><span>Updated 8:07 AM EST </span><span class="date-0"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <section class="section-video">
+                    <div>
+                        <div id="vid_68272ecce9ac31830269cf95" style="position: relative; width: 100%; padding: 56.25% 0 0;">
+                            <img id="thumb_68272ecce9ac31830269cf95" src="https://images.converteai.net/99773e93-d968-48cf-b0fc-2adc9092dd37/players/68272ecce9ac31830269cf95/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail">
+                            <div id="backdrop_68272ecce9ac31830269cf95" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; ">
+                            </div>
+                        </div>
+                        <script type="text/javascript" id="scr_68272ecce9ac31830269cf95">
+    var s = document.createElement("script"); s.src = "https://scripts.converteai.net/99773e93-d968-48cf-b0fc-2adc9092dd37/players/68272ecce9ac31830269cf95/player.js", s.async = !0, document.head.appendChild(s);
+                        </script>
+                    </div>
+                </section>
+                <section class="section-banner-chanels">
+                    <div class="banner-chanels">
+                        <img src="./photos/plagt_8ad6_7.png" alt="#" loading="lazy">
+                    </div>
+                </section>
+                <section class="section-form none">
+                    <div class="div-section-form">
+                        <form action="{{ACTION}}" method="POST" class="form">
+                            <p class="form-title"><strong>Only today:</strong>
+                            </p>
+                            <div class="wrap-prod-mobile" style="display:flex;justify-content:center">
+                                <img class="prod-form-img prod-form-img-2" src="./photos/control_8da8_8.png" alt="#" loading="lazy">
+                            </div>
+                            <div class="price-wrap">
+                                <div class="price-container">
+                                    <p class="form-price price"><span>23$</span> 
+                                        <svg class="circle-svg" viewBox="0 0 100 100">
+                                            <circle class="circle" cx="50" cy="50" r="45">
+                                            </circle>
+                                        </svg>
+                                    </p>
+                                </div>
+                                <div class="price-container"><strong class="price-old">210$</strong>
+                                    <p></p>
+                                </div>
+                            </div><a href="https://click.trk-us.com/click" class="order-btn smartplayer-scroll-event">Claim Your Bottle
+
+                                Now<br>with 80% Discount</a>
+                            <p class="order-gift">*Receive A Free <span style="color:red">Doctor's Consultation As A
+
+                                    Gift</span>
+                            </p>
+                        </form>
+                    </div>
+                </section>
+                <section class="section-comments">
+                    <h2>Comments</h2>
+                    <div class="reviews-container">
+                        <div class="review">
+                            <div class="review__img">
+                                <img src="./photos/5tpa9nxe_6636_9.jpg" alt="Avatar" loading="lazy">
+                            </div>
+                            <div>
+                                <div class="review-header">
+                                    <h4>Emily Wilson</h4>
+                                    <div class="date-styles"><span class="date-3"></span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p editor-select-element-id="70">I can’t believe it! After years of struggling with my weight, I’m finally watching the numbers on the scale go down—without starving myself or killing myself at the gym. No more counting calories, no more giving up my favorite foods. And the best part? My blood sugar is finally back to normal! This has completely changed my life!</p>
+                                </div>
+                                <div class="review__comment-img">
+                                    <img src="./photos/unknown_e8f4_10.jpg" alt="" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <div class="review__img">
+                                <img src="./photos/wjpehlp_cde1_11.jpg" alt="Avatar" loading="lazy">
+                            </div>
+                            <div>
+                                <div class="review-header">
+                                    <h4>James Anderson</h4>
+                                    <div class="date-styles"><span class="date-3"></span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p editor-select-element-id="82">I always thought struggling with my weight was just something I’d have to live with forever. But this video really made me stop and think—maybe I’ve been doing it all wrong this whole time? This method is nothing like anything I’ve tried before. I’m actually excited to give it a shot!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <div class="review__img">
+                                <img src="./photos/02isrcdqgb_d8da_12.jpg" alt="Avatar" loading="lazy">
+                            </div>
+                            <div>
+                                <div class="review-header">
+                                    <h4>Michael Johnson</h4>
+                                    <div class="date-styles"><span class="date-3"></span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p editor-select-element-id="92">My wife and I have been struggling with our weight for years, and it felt like nothing ever worked. But after watching this video, we decided to give this method a shot. Finally, something that doesn’t require brutal diets or spending hours in the gym! We’re excited to see the results and hoping this will be a real game-changer for us.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <div class="review__img">
+                                <img src="./photos/eumjil_6f58_13.jpg" alt="Avatar" loading="lazy">
+                            </div>
+                            <div>
+                                <div class="review-header">
+                                    <h4>Sarah Moore</h4>
+                                    <div class="date-styles"><span class="date-2"></span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <div class="relative p-1 rounded-sm flex items-center justify-center bg-token-main-surface-primary text-token-text-primary h-8 w-8">
+                                    </div>
+                                    <div class="group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn">
+                                        <div class="flex-col gap-1 md:gap-3">
+                                            <div class="flex max-w-full flex-col flex-grow">
+                                                <div class="min-h-8 text-message flex w-full flex-col items-end gap-2 whitespace-normal break-words [.text-message+&amp;]:mt-5">
+                                                    <div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]">
+                                                        <p class="markdown prose w-full break-words dark:prose-invert dark">It’s amazing how far health discoveries have come. I really hope more people learn about this method and finally get rid of their extra weight without strict diets or constantly feeling hungry.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <div class="review__img">
+                                <img src="./photos/unknown-3_679c_14.jpg" alt="Avatar" loading="lazy">
+                            </div>
+                            <div>
+                                <div class="review-header">
+                                    <h4>David Brown</h4>
+                                    <div class="date-styles"><span class="date-2"></span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p editor-select-element-id="118">I can’t believe how a simple method changed my life. I lost weight, reversed my prediabetes, and feel better than I have in years. If you’re on the fence—just give it a shot!</p>
+                                </div>
+                                <div class="review__comment-img">
+                                    <img src="./photos/unknown-2_3e53_15.jpg" alt="" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <div class="review__img">
+                                <img src="./photos/fbuids0oun_e32f_16.jpg" alt="Avatar" loading="lazy">
+                            </div>
+                            <div>
+                                <div class="review-header">
+                                    <h4>Jessica Taylor</h4>
+                                    <div class="date-styles"><span class="date-1"></span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>I came back to this video because I finally found something that actually works. I’ve already started using this method, and the weight is coming off—but the best part? My joints don’t hurt like they used to. I hope more people find out about this!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <div class="review__img">
+                                <img src="./photos/g1zcgnndb_848a_17.jpg" alt="Avatar" loading="lazy">
+                            </div>
+                            <div>
+                                <div class="review-header">
+                                    <h4>Ashley Clark</h4>
+                                    <div class="date-styles"><span class="date-1"></span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p editor-select-element-id="140">This is amazing! It’s so great to see people finally getting rid of that extra weight. I’m definitely sharing this with my friends and family!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <div class="review__img">
+                                <img src="./photos/jmde4sp_b42a_18.jpg" alt="Avatar" loading="lazy">
+                            </div>
+                            <div>
+                                <div class="review-header">
+                                    <h4>Megan Lewis</h4>
+                                    <div class="date-styles"><span class="date-0"></span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p editor-select-element-id="150">This video is truly inspiring. Sometimes it feels like there’s nothing you can do about extra weight, but now I finally have hope again!</p>
+                                    <div class="mb-2 flex gap-3 empty:hidden -ml-2">
+                                        <div class="items-center justify-start rounded-xl p-1 flex">
+                                            <div class="flex items-center">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <div class="review__img">
+                                <img src="./photos/0f8nogtmxz_74c6_19.jpg" alt="Avatar" loading="lazy">
+                            </div>
+                            <div>
+                                <div class="review-header">
+                                    <h4>Lauren White</h4>
+                                    <div class="date-styles"><span class="date-0"></span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p editor-select-element-id="163">It’s amazing how the right information can truly change your life. This video is a perfect example of what we actually need to fight excess weight. Thank you, doctor! I’ve been using your method for two weeks now, and I’m finally seeing real changes.</p>
+                                </div>
+                                <div class="review__comment-img">
+                                    <img src="./photos/unknown-4_9cd8_20.jpg" alt="" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <div class="review__img">
+                                <img src="./photos/10_e89b_21.png" alt="Avatar" loading="lazy">
+                            </div>
+                            <div>
+                                <div class="review-header">
+                                    <h4>Matthew Thompson</h4>
+                                    <div class="date-styles"><span class="date-0"></span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p editor-select-element-id="175">Has anyone else tried this? Thinking about giving it a shot, but I wanna make sure it actually works…</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div class="div__popup-form none">
+        <div class="popup-form">
+            <div class="div-section-form">
+                <div class="s-container elementor-container elementor-column-gap-default">
+                    <form action="{{ACTION}}" method="POST" class="form">
+                        <p class="form-title"><strong>Only today:</strong>
+                        </p>
+                        <div class="wrap-prod-mobile" style="display:flex;justify-content:center">
+                            <img class="prod-form-img prod-form-img-2" src="./photos/control_8da8_8.png" alt="#" loading="lazy">
+                        </div>
+                        <div class="price-wrap">
+                            <div class="price-container">
+                                <p class="form-price price"><span>23$</span> 
+                                    <svg class="circle-svg" viewBox="0 0 100 100">
+                                        <circle class="circle" cx="50" cy="50" r="45">
+                                        </circle>
+                                    </svg>
+                                </p>
+                            </div>
+                            <div class="price-container"><strong class="price-old">210$</strong>
+                                <p></p>
+                            </div>
+                        </div><a href="https://click.trk-us.com/click" class="order-btn">Claim Your Bottle Now<br>with
+
+                            80% Discount</a>
+                        <p class="order-gift">*Receive A Free <span style="color:red">Doctor's Consultation As A
+
+                                Gift</span>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="popup-form__btn-close">x</div>
+    </div>
+    <section>
+        <footer>
+            <div class="footer-elements">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="fox-news-logo-small" width="51.98" height="49" viewBox="0 0 52 49">
+                            <defs>
+                                <style>
+    .cls-1 {
+                                        fill: #fff
+                                    }
+                                </style>
+                            </defs>
+                            <path id="fox-news-logo-small-path" data-name="fox-news-logo-small" class="cls-1" d="M50.78,26h-.38q.87,1.68,1.59,3.44v12H.35L7,30.92V27.06L.12,41.42H.06l13.2-38a41.38,41.38,0,0,1,4.92.26L7.38,26.27H9.95l6.73-10.62v-5h3.18l3.76-5.93a41.29,41.29,0,0,1,13.19,6h.58A41.75,41.75,0,0,0,23.81,4.41L26.6,0H52V28.56C51.61,27.69,51.21,26.85,50.78,26ZM30.43,39.43h2.86l1.4-6.94,1.45,6.94h2.8L41.8,27.23H39.26l-1.52,7-1.49-7H33.61L32.2,34.35l-1.48-7.12H27.58Zm-11.37,0h8V36.58H22.13V34.51h4V31.87h-4V30.08H27V27.23H19.06ZM15.23,27.27v6.13l-3.67-6.12H8L8,39.4h3.13v-7l4.19,7h3V27.27ZM26,11.65H17.69V25h3.9V20.68h3.84V17H21.63V15.3h4.68Zm6.92,0a6.73,6.73,0,1,0,6.85,6.73A6.79,6.79,0,0,0,33,11.67Zm16.9,0H45.58L44,14.44l-1.66-2.77H38l3.85,6.43-4,6.88h4.22L44,21.69,46,25h4.32l-4.15-6.93ZM46.21,26.84c-2.81,0-4.53,1.72-4.53,4,0,2,1.15,3,3.54,3.69,1.4.42,2.14.39,2.14,1.28,0,.47-.44.84-1.18.84a1.82,1.82,0,0,1-2-1.53l-3,.65c.5,2.35,2.25,3.73,4.92,3.73a4.67,4.67,0,0,0,3.52-1.44,4,4,0,0,0,1-2.71,3.41,3.41,0,0,0-1-2.6,6.35,6.35,0,0,0-2.81-1.25c-1.25-.35-1.93-.39-1.93-1.11A1,1,0,0,1,46,29.56a1.62,1.62,0,0,1,1.7,1.23l2.69-.9A4.13,4.13,0,0,0,46.21,26.84ZM32.94,22.29a1.18,1.18,0,0,1-1.19-1.17V15.46a1.23,1.23,0,0,1,1.19-1.23,1.27,1.27,0,0,1,1.24,1.23l0,5.67A1.18,1.18,0,0,1,32.94,22.29ZM13.39,3.11,14.47,0H20l-1.63,3.4A41.76,41.76,0,0,0,13.39,3.11ZM0,5.32V0H8.58L7.85,3.48A41.53,41.53,0,0,0,0,5.32Zm0,35.4v-35A41.1,41.1,0,0,1,7.77,3.85ZM52,49H0V42.49l52,0Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="footer-info-container">
+                        <div class="footer-links-list">
+                            <div class="footer-links">Updated Terms of Use</div>&nbsp;|&nbsp;
+                            <div class="footer-links">New Privacy Policy</div>&nbsp;|&nbsp;
+                            <div class="footer-links">Your Privacy Choices</div>&nbsp;|&nbsp;
+                            <div class="footer-links">Closed Caption Policy</div>&nbsp;|&nbsp;
+                            <div class="footer-links">Help</div>&nbsp;|&nbsp;
+                            <div class="footer-links">Contact Us</div>&nbsp;|&nbsp;
+                            <div class="footer-links">Accessibility Statement</div>
+                        </div>
+                        <p class="copyright">This material may not be published, broadcast, rewritten, or redistributed. ©2025 FOX News Network, LLC. All rights reserved. Quotes displayed in real-time or delayed by at least 15 minutes. Market data provided by <span>Factset</span>. Powered and implemented by <span>FactSet Digital Solutions</span>. <span>Legal Statement</span>. Mutual Fund and ETF data provided by <span>Refinitiv Lipper</span>.</p>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" id="facebook" width="7" height="16" viewBox="0 0 7 16">
+                            <defs>
+                                <style>
+    .cls-1 {
+                                        fill: #fff
+                                    }
+                                </style>
+                            </defs>
+                            <path id="facebook-path" data-name="facebook" class="cls-1" d="M7,5.24,6.72,8H4.66v8H1.55V8H0V5.24H1.55V3.58C1.55,1.34,2.43,0,4.91,0H7V2.76H5.69c-1,0-1,.39-1,1.11V5.24Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M9.31742 6.77491L15.1457 0H13.7646L8.70389 5.88256L4.66193 0H0L6.11224 8.89547L0 16H1.38119L6.72542 9.78782L10.994 16H15.656L9.31708 6.77491H9.31742ZM7.42569 8.97384L6.80639 8.08805L1.87886 1.03974H4.00029L7.97687 6.72795L8.59617 7.61374L13.7652 15.0075H11.6438L7.42569 8.97418V8.97384Z" fill="white">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" id="instagram" width="16" height="16" viewBox="0 0 16 16">
+                            <defs>
+                                <style>
+    .cls-1 {
+                                        fill: #fff
+                                    }
+                                </style>
+                            </defs>
+                            <path id="instagram-path" class="cls-1" d="M5.33,8A2.67,2.67,0,1,1,8,10.67,2.67,2.67,0,0,1,5.33,8M3.89,8A4.11,4.11,0,1,0,8,3.89,4.11,4.11,0,0,0,3.89,8m7.42-4.27a1,1,0,1,0,1-1h0a1,1,0,0,0-1,1M4.77,14.51a4.42,4.42,0,0,1-1.49-.28,2.49,2.49,0,0,1-.92-.6,2.47,2.47,0,0,1-.6-.92,4.42,4.42,0,0,1-.28-1.49c0-.84,0-1.1,0-3.23s0-2.39,0-3.23a4.44,4.44,0,0,1,.28-1.49,2.49,2.49,0,0,1,.6-.92,2.47,2.47,0,0,1,.92-.6,4.42,4.42,0,0,1,1.49-.28c.84,0,1.1,0,3.23,0s2.39,0,3.23,0a4.44,4.44,0,0,1,1.49.28,2.48,2.48,0,0,1,.92.6,2.48,2.48,0,0,1,.6.92,4.42,4.42,0,0,1,.28,1.49c0,.84,0,1.1,0,3.23s0,2.39,0,3.23a4.44,4.44,0,0,1-.28,1.49,2.65,2.65,0,0,1-1.52,1.52,4.42,4.42,0,0,1-1.49.28c-.84,0-1.1,0-3.23,0s-2.39,0-3.23,0M4.7,0A5.87,5.87,0,0,0,2.76.42a3.93,3.93,0,0,0-1.42.92A3.91,3.91,0,0,0,.42,2.76,5.87,5.87,0,0,0,0,4.7C0,5.55,0,5.83,0,8s0,2.45,0,3.3a5.87,5.87,0,0,0,.37,1.94,3.91,3.91,0,0,0,.92,1.42,3.93,3.93,0,0,0,1.42.92A5.87,5.87,0,0,0,4.7,16c.85,0,1.13,0,3.3,0s2.45,0,3.3,0a5.87,5.87,0,0,0,1.94-.37,4.09,4.09,0,0,0,2.34-2.34A5.85,5.85,0,0,0,16,11.3c0-.85,0-1.13,0-3.3s0-2.45,0-3.3a5.87,5.87,0,0,0-.37-1.94,3.93,3.93,0,0,0-.92-1.42A3.91,3.91,0,0,0,13.24.42,5.86,5.86,0,0,0,11.3,0C10.45,0,10.17,0,8,0S5.56,0,4.7,0">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
+                            <title>52F65EFB-46EC-468A-B9B2-36249D536CB2</title>
+                            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="footer/768" transform="translate(-300.000000, -622.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                    <g id="768" transform="translate(24.000000, 32.000000)">
+                                        <g id="social" transform="translate(155.000000, 583.000000)">
+                                            <g id="icon-social-youtube" transform="translate(114.000000, 0.000000)">
+                                                <g id="icon-youtube" transform="translate(7.500000, 7.500000)">
+                                                    <path d="M7.78387417,2.34411956 C8.82953874,2.35024901 12.3554096,2.39070341 13.3477561,2.65770247 C13.9980895,2.82553044 14.506818,3.32901437 14.6851352,3.97934778 C14.9001648,5.16987749 15.0050573,6.37614107 14.9998127,7.58764927 C15.0050573,8.79915747 14.9001648,10.0054211 14.6851352,11.1959508 C14.506818,11.8462842 13.9928448,12.3497681 13.3425114,12.5175961 C12.2792831,12.8036665 8.31200654,12.8296729 7.59947054,12.8320371 L7.37955096,12.8320371 C6.66701497,12.8296729 2.69973845,12.8036665 1.63651008,12.5175961 C0.991421293,12.3445235 0.487937364,11.8410395 0.314864764,11.1959508 C0.099835169,10.0054211 -0.00505731625,8.79915747 0.000187308009,7.58764927 C-0.00505731625,6.37614107 0.099835169,5.16987749 0.314864764,3.97934778 C0.487937364,3.33425899 0.991421293,2.83077507 1.63651008,2.65770247 C2.62885656,2.39070341 6.15095165,2.35024901 7.19547205,2.34411956 Z M5.99479284,5.33770546 L5.99479284,9.83759308 L9.88630404,7.58764927 L5.99479284,5.33770546 Z" id="youtube">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+                            <polygon id="icon" points="5 0 0 0 0 15 5 15 5 10 10 10 10 5 15 5 15 0 5 0" style="fill:#fff">
+                            </polygon>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.7061 0H15.3411C15.9941 0 16.5 0.51581 16.5 1.15124V14.848C16.5 15.4842 15.8036 16 15.1507 16H1.51562C0.863429 16 0.5 15.4842 0.5 14.848V1.15124C0.5 0.51581 1.0539 0 1.7061 0ZM8.74914 6.09524H6.59524V13.7143H8.88095V10.0549C8.88095 8.7779 9.42876 8 10.5777 8C11.524 8 11.9286 8.88914 11.9286 9.90248V13.7143H14.2143V9.48571C14.2143 7.2221 13.572 6 11.2703 6C10.071 6 9.10114 6.60114 8.77276 7.19314H8.74914V6.09524ZM2.78571 13.7143H5.07143V6.09524H2.78571V13.7143ZM3.92857 4.85714C4.71791 4.85714 5.35714 4.21791 5.35714 3.42857C5.35714 2.63924 4.71791 2 3.92857 2C3.13924 2 2.5 2.63924 2.5 3.42857C2.5 4.21791 3.13924 4.85714 3.92857 4.85714Z" fill="white">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
+                            <title>B6042F53-689A-4DF3-B2C7-278E86262290</title>
+                            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="footer/768" transform="translate(-414.000000, -622.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                    <g id="768" transform="translate(24.000000, 32.000000)">
+                                        <g id="social" transform="translate(155.000000, 583.000000)">
+                                            <g id="icon-social-slack" transform="translate(228.000000, 0.000000)">
+                                                <g id="icon-slack" transform="translate(7.500000, 7.500000)">
+                                                    <path d="M5.49988338,7.99998329 C5.89812459,8.00031547 6.27991896,8.15854012 6.56125899,8.43984253 C6.84259901,8.72114495 7.00043357,9.10247709 7.00003455,9.49993317 L7.00003455,9.49993317 L7.00003455,13.5000501 C7.00072755,14.3276598 6.32912771,14.9991699 5.49988338,15 C4.67146085,15 3.99998408,14.3283432 3.99998408,13.4997995 L3.99998408,13.4997995 L3.99998408,9.49993317 C3.99998408,8.67164005 4.67146085,7.99998329 5.49988338,7.99998329 Z M9.49986595,12.0001002 C10.3291103,12.0009303 11.0007101,12.6724404 11.0000169,13.5000501 C11.0007101,14.3276598 10.3291103,14.9991699 9.49986595,15 C8.67144342,15 7.99996665,14.3283432 7.99996665,13.5000501 L7.99996665,13.5000501 L7.99996665,12.0001002 Z M13.4998485,7.99998329 C14.3290928,8.00081338 15.0006927,8.67232345 14.9999995,9.49993317 C14.9999995,10.3284769 14.328271,11.0001337 13.5000996,11.0001337 L13.5000996,11.0001337 L9.49986595,11.0001337 C9.10166826,10.9994844 8.7199384,10.8412305 8.43865268,10.5599353 C8.15736695,10.2786401 7.99956686,9.89734586 7.99996589,9.49993317 C7.99996589,8.67164005 8.67144342,7.99998329 9.49986595,7.99998329 L9.49986595,7.99998329 Z M3.00005176,7.99998329 L3.00005176,9.49993317 C3.00074498,10.3275429 2.32914514,10.999053 1.49990081,10.999883 C1.10170312,10.9994844 0.719973262,10.8412305 0.438687537,10.5599353 C0.157401811,10.2786401 -0.000398283971,9.89734586 7.54966673e-07,9.49993317 C7.54966673e-07,8.67164005 0.671478278,7.99998329 1.49990081,7.99998329 L1.49990081,7.99998329 L3.00005176,7.99998329 Z M5.49988338,3.99986634 C6.32830591,3.99986634 7.00003379,4.67152309 7.00003379,5.50006683 C7.00003379,6.32835995 6.32830591,7.00001671 5.50013449,7.00001671 L5.50013449,7.00001671 L1.49990081,7.00001671 C0.671478278,7.00001671 1.51280016e-06,6.32835995 1.51280016e-06,5.50006683 C1.51280016e-06,4.67152309 0.671478278,3.99986634 1.49990081,3.99986634 L1.49990081,3.99986634 Z M13.4998485,3.99986634 C14.328271,3.99986634 14.9999995,4.67152309 14.9999995,5.50006683 C15.0006927,6.32767655 14.3290928,6.99918662 13.4998485,7.00001671 L13.4998485,7.00001671 L11.9999492,7.00001671 L11.9999492,5.50006683 C11.9999492,4.67152309 12.671426,3.99986634 13.4998485,3.99986634 Z M9.49986595,0 C10.3291103,0.000830088296 11.0007101,0.672340158 11.0000169,1.49994988 L11.0000169,1.49994988 L11.0000169,5.50031745 C11.0007101,6.32792717 10.3291103,6.99943724 9.49986595,7.00026733 C8.67144342,7.00026733 7.99996665,6.32861057 7.99996665,5.49981621 L7.99996665,5.49981621 L7.99996665,1.49994988 C7.99996665,0.671656753 8.67144342,0 9.49986595,0 Z M5.49988338,0 C6.32912771,0.000830088296 7.00072755,0.672340158 7.00003432,1.49994988 L7.00003432,1.49994988 L7.00003432,2.99989975 L5.49988338,2.99989975 C5.10168569,2.99950114 4.71995583,2.84124718 4.43867011,2.55995197 C4.15738438,2.27865676 3.99958429,1.89736257 3.99998332,1.49994988 C3.99998332,0.671656753 4.67146085,0 5.49988338,0 Z" id="slack">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" id="rss" width="16" height="16" viewBox="0 0 16 16">
+                            <defs>
+                                <style>
+    .cls-1 {
+                                        fill: #fff
+                                    }
+                                </style>
+                            </defs>
+                            <path id="rss-path" data-name="rss" class="cls-1" d="M2.13,11.74a2.13,2.13,0,1,0,2.13,2.13A2.13,2.13,0,0,0,2.13,11.74ZM0,5.44V8.51A7.42,7.42,0,0,1,5.28,10.7,7.46,7.46,0,0,1,7.48,16h3.08A10.58,10.58,0,0,0,0,5.44ZM0,0V3.07A12.94,12.94,0,0,1,12.92,16H16A16,16,0,0,0,0,0Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" id="email" width="15" height="10" viewBox="0 0 15 10">
+                            <defs>
+                                <style>
+    .cls-1 {
+                                        fill: #fff
+                                    }
+                                </style>
+                            </defs>
+                            <path id="email-path" data-name="email" class="cls-1" d="M9.47,5,15,0V10ZM.79,0H14.21L7.5,6ZM0,10V0L5.53,5ZM7.5,7,9,6l5.23,4H.79L6,6Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
+                            <title>502E78BD-1CCC-4605-A5FA-47E0FA625D73</title>
+                            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="footer/768" transform="translate(-528.000000, -622.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                    <g id="768" transform="translate(24.000000, 32.000000)">
+                                        <g id="social" transform="translate(155.000000, 583.000000)">
+                                            <g id="icon-social-spotify" transform="translate(342.000000, 0.000000)">
+                                                <g id="icon-spotify" transform="translate(7.500000, 7.500000)">
+                                                    <path d="M7.5,0 C11.6421356,0 15,3.35786438 15,7.5 C15,11.6421356 11.6421356,15 7.5,15 C3.35786438,15 0,11.6421356 0,7.5 C0,3.35786438 3.35786438,0 7.5,0 Z M10.7845377,10.174814 C8.80791711,8.96652497 6.35706695,8.68517535 3.50053135,9.33873539 C3.33779706,9.37589518 3.20724889,9.49704996 3.15806307,9.65656189 C3.10887726,9.81607381 3.14852629,9.98970923 3.26207477,10.1120614 C3.37562324,10.2344135 3.54582044,10.2868941 3.70855473,10.2497343 C6.3196068,9.65356004 8.53533475,9.8966525 10.2967588,10.9726355 C10.4026038,11.0375463 10.5299388,11.05764 10.6506289,11.028477 C10.771319,10.9993139 10.8754297,10.9232947 10.9399575,10.8172157 C11.0738576,10.597237 11.0045165,10.3095112 10.7845377,10.174814 Z M11.6644527,7.97104145 C9.34989373,6.54914984 5.9641339,6.14824655 3.23990436,6.97476089 C2.9498242,7.08271126 2.79377568,7.39769692 2.88364282,7.69387876 C2.97350996,7.99006059 3.27827935,8.16522544 3.57943677,8.09378321 C5.9641339,7.37008502 9.03746015,7.72874601 11.053135,8.96811902 C11.3283232,9.1362482 11.6876705,9.04997633 11.8565356,8.77523911 L11.8565356,8.77523911 C11.9385881,8.64373145 11.9639165,8.48455239 11.9277386,8.33356185 C11.8915606,8.18257131 11.7968442,8.05215546 11.6644527,7.97104145 Z M12.651169,5.44287991 C9.86875664,3.79144527 5.46439957,3.63522848 2.81588735,4.44022317 C2.57281839,4.51023222 2.38627649,4.70569923 2.32769556,4.95177252 C2.26911463,5.19784581 2.34757112,5.45639911 2.5330211,5.62842265 C2.71847108,5.80044618 2.98218116,5.85928684 3.22316684,5.78241233 C5.5305526,5.08103082 9.51886291,5.21333688 11.9370351,6.6487779 L11.9370351,6.6487779 C12.2686606,6.84721774 12.6990097,6.73731102 12.8966525,6.40409139 C13.0942953,6.07087177 12.9843886,5.64052273 12.651169,5.44287991 Z" id="spotify">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="16px" viewBox="0 0 16 16" version="1.1">
+                            <title>26CD464D-E0FE-41B0-9B48-4B5BDFFA62D8</title>
+                            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="footer/768" transform="translate(-566.000000, -622.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                    <g id="768" transform="translate(24.000000, 32.000000)">
+                                        <g id="social" transform="translate(155.000000, 583.000000)">
+                                            <g id="icon-social-iheartradio" transform="translate(380.000000, 0.000000)">
+                                                <g id="icon-iheartradio" transform="translate(7.500000, 7.500000)">
+                                                    <path d="M10.9335841,1.875 C13.1925891,1.875 15.0223831,3.73036731 14.9997931,6.02094423 C14.9997931,7.47546057 14.0961911,8.51767307 13.147409,9.49116826 L13.147409,9.49116826 L9.44264081,13.0415625 C9.25062539,13.2248086 8.93436469,13.087374 8.93436469,12.8125048 L8.93436469,12.8125048 L8.93436469,10.0409067 C8.93436469,9.2392048 8.29054827,8.58639038 7.49989653,8.58639038 C6.70924479,8.58639038 6.06542837,9.2392048 6.06542837,10.0409067 L6.06542837,10.0409067 L6.06542837,12.8125048 C6.06542837,13.087374 5.74916767,13.2248086 5.55715225,13.0415625 L5.55715225,13.0415625 L1.85238408,9.49116826 C0.903601992,8.51767307 0,7.47546057 0,6.02094423 C0,3.73036731 1.82979403,1.875 4.08879901,1.875 C5.51197215,1.875 6.77701494,2.64234327 7.51119155,3.75327307 C8.24536817,2.63089038 9.52170599,1.875 10.9335841,1.875 Z M3.34332737,3.27225192 C3.25296717,3.13481731 3.0835418,3.10045865 2.9480015,3.18062884 C2.14605473,3.69600865 1.54741841,4.82984423 1.54741841,5.82624519 L1.54741841,5.82624519 L1.54741841,5.83769807 C1.54741841,6.99443942 2.16864478,8.13972788 3.38850747,9.2392048 C3.44498259,9.28501634 3.51275274,9.30792211 3.58052289,9.30792211 C3.65958807,9.30792211 3.73865324,9.28501634 3.79512836,9.21629903 C3.90807861,9.10177018 3.89678359,8.91852403 3.77253831,8.81544807 C2.6769209,7.83049999 2.12346468,6.82264615 2.12346468,5.83769807 L2.12346468,5.83769807 L2.12346468,5.82624519 C2.12346468,5.02454327 2.62044578,4.07395384 3.25296717,3.67310288 C3.38850747,3.58147981 3.42239254,3.40968654 3.34332737,3.27225192 Z M12.0630866,3.18062884 C11.9275463,3.10045865 11.7468259,3.13481731 11.6677607,3.27225192 C11.5886955,3.40968654 11.6225806,3.59293269 11.7581209,3.67310288 C12.3906423,4.07395384 12.8876234,5.02454327 12.8876234,5.82624519 L12.8876234,5.82624519 L12.8876234,5.83769807 C12.8876234,6.83409903 12.3341672,7.83049999 11.2385498,8.81544807 C11.1255995,8.91852403 11.1143045,9.10177018 11.2159597,9.21629903 C11.2724348,9.27356345 11.3515,9.30792211 11.4305652,9.30792211 C11.4983353,9.30792211 11.5661055,9.28501634 11.6225806,9.2392048 C12.8424433,8.13972788 13.4636697,6.99443942 13.4636697,5.83769807 L13.4636697,5.83769807 L13.4636697,5.82624519 C13.4636697,4.81839134 12.8537383,3.68455577 12.0630866,3.18062884 Z M5.45549702,4.02814231 C5.37643185,3.87925481 5.20700648,3.83344327 5.07146618,3.90216057 C4.32599453,4.30301154 3.85160349,5.09326057 3.85160349,5.95222692 L3.85160349,5.95222692 L3.85160349,5.9636798 C3.85160349,6.86845769 4.41635473,7.79614134 5.24089155,8.26570961 C5.28607165,8.28861538 5.33125175,8.30006826 5.37643185,8.30006826 C5.47808707,8.30006826 5.56844727,8.24280384 5.6249224,8.15118076 C5.70398757,8.01374615 5.64751245,7.84195288 5.50067712,7.76178269 C4.84556568,7.39529038 4.40505971,6.67375865 4.40505971,5.9636798 C4.40505971,5.31086538 4.76650051,4.71531538 5.33125175,4.41754038 C5.47808707,4.33737019 5.52326717,4.16557692 5.45549702,4.02814231 Z M9.93962191,3.90216057 C9.80408161,3.83344327 9.62336121,3.89070769 9.55559106,4.02814231 C9.48782091,4.16557692 9.54429604,4.34882307 9.67983633,4.41754038 C10.2558826,4.72676827 10.6060284,5.31086538 10.6060284,5.9636798 C10.6060284,6.66230576 10.1655224,7.38383749 9.51041096,7.76178269 C9.37487066,7.84195288 9.31839554,8.01374615 9.39746071,8.15118076 C9.45393584,8.24280384 9.54429604,8.30006826 9.64595126,8.30006826 C9.69113136,8.30006826 9.73631146,8.28861538 9.78149156,8.26570961 C10.6173234,7.79614134 11.1707796,6.86845769 11.1594846,5.9636798 L11.1594846,5.9636798 L11.1594846,5.95222692 C11.1594846,5.09326057 10.6963886,4.30301154 9.93962191,3.90216057 Z M7.51119155,4.9214673 C6.83349006,4.9214673 6.28003384,5.48265865 6.28003384,6.16983173 C6.28003384,6.8570048 6.83349006,7.41819615 7.51119155,7.41819615 C8.18889305,7.41819615 8.74234927,6.8570048 8.74234927,6.16983173 C8.74234927,5.48265865 8.18889305,4.9214673 7.51119155,4.9214673 Z" id="iheartradio">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script>
+    function formatDate(e) { var t = e.getDate(), a = e.getMonth() + 1; return (a < 10 ? "0" + a : a) + "." + (t < 10 ? "0" + t : t) + "." + e.getFullYear() } let today = new Date, yesterday = new Date(today), dayBeforeYesterday = (yesterday.setDate(today.getDate() - 1), new Date(today)), twoDaysBeforeYesterday = (dayBeforeYesterday.setDate(today.getDate() - 2), new Date(today)), formattedToday = (twoDaysBeforeYesterday.setDate(today.getDate() - 3), formatDate(today)), formattedYesterday = formatDate(yesterday), formattedDayBeforeYesterday = formatDate(dayBeforeYesterday), formattedTwoDaysBeforeYesterday = formatDate(twoDaysBeforeYesterday), date0Elements = document.getElementsByClassName("date-0"); for (let e = 0; e < date0Elements.length; e++)date0Elements[e].innerText = formattedToday; let date1Elements = document.getElementsByClassName("date-1"); for (let e = 0; e < date1Elements.length; e++)date1Elements[e].innerText = formattedYesterday; let date2Elements = document.getElementsByClassName("date-2"); for (let e = 0; e < date2Elements.length; e++)date2Elements[e].innerText = formattedDayBeforeYesterday; let date3Elements = document.getElementsByClassName("date-3"); for (let e = 0; e < date3Elements.length; e++)date3Elements[e].innerText = formattedTwoDaysBeforeYesterday
+    </script>
+    <style>
+    .review {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 20px
+        }
+        .review__img img {
+            border-radius: 10px;
+            max-width: 65px
+        }
+        .review__comment-img {
+            margin-top: 26px
+        }
+        img {
+            max-width: 100%
+        }
+        .react-coment {
+            text-decoration: none !important;
+            color: #696969 !important;
+            cursor: default
+        }
+        @media (max-width:769px) {
+            .form img {
+                max-width: 180px !important
+            }
+        }
+    </style>
+</body>
+
+</html>
